@@ -1,14 +1,15 @@
 import React from 'react';
 import ShoppingItem from './ShoppingItem';
 
-export default function ShoppingList({ items, deleteItem }) {
+export default function ShoppingList({ items, deleteItem, updateItem }) {
     const ItemsJsx = items.map(listItem =>
         <ShoppingItem 
             key={listItem.id}
             id={listItem.id}
             itemName={listItem.item}
             quantity={listItem.quantity}
-            deleteItem={deleteItem} />
+            deleteItem={deleteItem}
+            updateItem={updateItem} />
     );
 
     return <ul>{ItemsJsx}</ul>;
